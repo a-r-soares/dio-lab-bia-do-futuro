@@ -61,16 +61,17 @@ flowchart TD
     D --> C
     C --> E[Validação]
     E --> F[Resposta]
+    F --> B[Interface]
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | HTML5, CSS (Tailwind) e JavaScript para interação conectado ao Python (back-end) |
+| LLM | Modelo aberto Gemma 4 (versão 12B), executado 100% localmente e de forma offline via aplicativo LM Studio. A integração com o back-end em Python é realizada através de um servidor de inferência local (Local Server), garantindo total privacidade, zero custo de requisição e imunidade a instabilidades de rede. |
+| Base de Conhecimento | dados consumidos em tempo real via requisições JSON à API do Banco Central do Brasil |
+| Validação | camada de segurança implementado no código Python para dupla checagem: resposta estritamente ancorada nos números oficiais e bloqueio de resposta que configurem recomendação direta de investimentos |
 
 ---
 
