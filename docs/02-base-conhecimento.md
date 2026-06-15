@@ -2,17 +2,23 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+- Fonte Principal de Dados:
 
-| Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+  Acesso transacional dinâmico à API pública do Banco Central do Brasil (SGS - Sistema Gerenciador de Séries Temporais).
 
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+- Armazenamento Local (Persistência de Dados):
+
+  Nenhum. O projeto adota a arquitetura de processamento em memória (in-memory), dispensando a criação de diretórios locais de dados (ex: pastas de arquivos .csv ou .json).
+
+- Justificativa de Arquitetura:
+
+  - Acurácia (Real-Time):
+
+    Garante que o assistente (ALDO) utilize estritamente a informação oficial do exato momento da consulta, mitigando o risco de respostas com base em arquivos locais desatualizados.
+
+  - Otimização de Recursos:
+
+    Elimina a necessidade de desenvolver rotinas paralelas de carga e atualização de dados (ETL físico), mantendo o sistema incrivelmente leve e eliminando pontos de falha de armazenamento.
 
 ---
 
@@ -20,7 +26,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+Não há modificação dos dados lidos pela API.
 
 ---
 
@@ -29,12 +35,13 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+O carregamento ocorre de forma dinâmica e transacional (sob demanda). No momento da interação com o assistente, o back-end em Python realiza uma requisição HTTP (método GET) diretamente aos endpoints da API do Sistema Gerenciador de Séries Temporais (SGS) do Banco Central. O retorno (payload), em formato estruturado JSON, é imediatamente processado pela aplicação. Os campos essenciais — como a data de vigência e o valor percentual da taxa — são extraídos e carregados estritamente na memória volátil (RAM) através de variáveis do código. Não há rotinas de persistência física (gravação em disco), garantindo que o sistema consuma sempre a posição mais atualizada e oficial sem gerar lixo de dados.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Os dados extraídos da API atuam como o contexto de ancoragem para o modelo de linguagem (Gemma 4). As variáveis que estão em memória são injetadas dinamicamente no System Prompt (as instruções de base do assistente) utilizando técnicas nativas de formatação de texto do Python (como as f-strings).
+Na prática, o código acopla a regra de negócios à informação oficial antes de chamar o servidor do LM Studio, enviando uma instrução semelhante a: "Você é o ALDO. O usuário tem uma dúvida. Baseie sua explicação exclusivamente neste dado oficial: A taxa Selic referente a [variável_data] é de [variável_taxa]%." Essa injeção de contexto trava o LLM na verdade absoluta do dado, eliminando o risco de alucinações e garantindo que o motor de inferência foque apenas em traduzir o número para uma linguagem didática e acessível ao usuário final.
 
 ---
 
@@ -43,13 +50,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
-
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
+ "Você é o ALDO. O usuário tem uma dúvida. Baseie sua explicação exclusivamente neste dado oficial:
+  A taxa Selic referente a [variável_data] é de [variável_taxa]%."
 ...
 ```
