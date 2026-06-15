@@ -71,7 +71,7 @@ flowchart TD
 | Interface | HTML5, CSS (Tailwind) e JavaScript para interação conectado ao Python (back-end) |
 | LLM | Modelo aberto Gemma 4 (versão 12B), executado 100% localmente e de forma offline via aplicativo LM Studio. A integração com o back-end em Python é realizada através de um servidor de inferência local (Local Server), garantindo total privacidade, zero custo de requisição e imunidade a instabilidades de rede. |
 | Base de Conhecimento | dados consumidos em tempo real via requisições JSON à API do Banco Central do Brasil |
-| Validação | camada de segurança implementado no código Python para dupla checagem: resposta estritamente ancorada nos números oficiais e bloqueio de resposta que configurem recomendação direta de investimentos |
+| Validação | camada de segurança implementado no código Python para dupla checagem: resposta estritamente ancorada nos números oficiais da API e bloqueio de resposta que configurem recomendação direta de investimentos |
 
 ---
 
@@ -79,12 +79,14 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] Agente só responde com base nos dados oficiais da API
+- [ ] Respostas incluem fonte da informação
+- [ ] Quando não sabe, admite e redireciona
+- [ ] Não faz recomendações de investimento
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- Não busca indicadores em outras fontes
+- Não busca dados pessoais ou sensíveis - Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)
+- Não substitui um profissional certificado
