@@ -69,7 +69,7 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | HTML5, CSS (Tailwind) e JavaScript para interação conectado ao Python (back-end) |
-| LLM | Modelo aberto Gemma 4 (versão 12B), executado 100% localmente e de forma offline via aplicativo LM Studio. A integração com o back-end em Python é realizada através de um servidor de inferência local (Local Server), garantindo total privacidade, zero custo de requisição e imunidade a instabilidades de rede. |
+| LLM | Modelo aberto Llama 3.1 (versão 8B Instruct GGUF Q4_K_M), executado 100% localmente e de forma offline via aplicativo LM Studio. A integração com o back-end em Python é realizada através de um servidor de inferência local (Local Server), garantindo total privacidade, zero custo de requisição e imunidade a instabilidades de rede. |
 | Base de Conhecimento | dados consumidos em tempo real via requisições JSON à API do Banco Central do Brasil |
 | Validação | camada de segurança implementado no código Python para dupla checagem: resposta estritamente ancorada nos números oficiais da API e bloqueio de resposta que configurem recomendação direta de investimentos |
 
