@@ -40,7 +40,7 @@ O carregamento ocorre de forma dinâmica e transacional (sob demanda). No moment
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-Os dados extraídos da API atuam como o contexto de ancoragem para o modelo de linguagem (Gemma 4). As variáveis que estão em memória são injetadas dinamicamente no System Prompt (as instruções de base do assistente) utilizando técnicas nativas de formatação de texto do Python (como as f-strings).
+Os dados extraídos da API atuam como o contexto de ancoragem para o modelo de linguagem (Llama 3.1). As variáveis que estão em memória são injetadas dinamicamente no System Prompt (as instruções de base do assistente) utilizando técnicas nativas de formatação de texto do Python (como as f-strings).
 Na prática, o código acopla a regra de negócios à informação oficial antes de chamar o servidor do LM Studio, enviando uma instrução semelhante a: "Você é o ALDO. O usuário tem uma dúvida. Baseie sua explicação exclusivamente neste dado oficial: A taxa Selic referente a [variável_data] é de [variável_taxa]%." Essa injeção de contexto trava o LLM na verdade absoluta do dado, eliminando o risco de alucinações e garantindo que o motor de inferência foque apenas em traduzir o número para uma linguagem didática e acessível ao usuário final.
 
 ---
