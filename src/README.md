@@ -1,23 +1,37 @@
 # Código da Aplicação
 
-Esta pasta contém o código do seu agente financeiro.
+Esta pasta contém o código do agente ALDO.
 
-## Estrutura Sugerida
+## Estrutura
 
 ```
 src/
-├── app.py              # Aplicação principal (Streamlit/Gradio)
-├── agente.py           # Lógica do agente
-├── config.py           # Configurações (API keys, etc.)
+├── aldo_app.py         # Aplicação Utilitária (Terminal / CLI) - Script Python puro focado em automação, processamento em lote e execução rápida direto no terminal.
+├── aldo_web.py         # Aplicação Principal (Web / Streamlit) - Interface gráfica interativa para o usuário (chat).
 └── requirements.txt    # Dependências
+|── .dotenv             # Dados Sensíveis -  URL e KEY para o aplicativo aldo_app.py
+.strealit/
+|── secrets.toml        # Dados Sensíveis -  URL e KEY para o aplicativo aldo_web.py
 ```
 
-## Exemplo de requirements.txt
+## Arquivo requirements.txt
 
 ```
-streamlit
-openai
-python-dotenv
+openai==2.42.0
+python-dotenv==1.2.2
+requests==2.34.2
+streamlit==1.58.0
+```
+## Antes de Rodar
+
+```
+EDIT o arquivo .dotenv e preencha as variáveis de acordo com seu caso
+LM_STUDIO_URL = "INFORMAR_AQUI_URL"
+LM_STUDIO_KEY = "INFORMAR_AQUI_KEY"
+
+EDIT o arquivo secrets.toml dentro da pasta .streamlit e preencha as variáveis de acordo com seu caso
+BASE_URL = "INFORMAR_AQUI_URL"
+API_KEY = "INFORMAR_AQUI_KEY"
 ```
 
 ## Como Rodar
@@ -26,6 +40,9 @@ python-dotenv
 # Instalar dependências
 pip install -r requirements.txt
 
-# Rodar a aplicação
-streamlit run app.py
+# Rodar a aplicação utilitária
+python aldo_app.py
+
+# Rodar a aplicação principal
+streamlit run aldo_web.py
 ```
