@@ -117,5 +117,21 @@ Os macroeconômicos e financeiros que posso apresentar, são indicadores oficiai
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- [Observação 1]
-- [Observação 2]
+- As regras 1 e 3 foram ajustadas pois, ao ser perguntado o nome do presidente do Banco Central do Brasil, o ALDO respondeu Roberto Campos Neto.
+  Ele não deveria responder a respeito de nomes e, como o Llama 3.1 está com informações atualizadas até 2024, não aprendeu que o atual presidente é Gabriel Galípolo.
+
+  Como era a REGRA 1:
+
+  - Sempre baseie suas respostas nos dados fornecidos pela API do Banco Central do Brasil.
+ 
+  Como ficou a REGRA 1:
+  
+  - Responda ESTRITAMENTE sobre os valores numéricos e conceitos dos indicadores injetados no contexto. NUNCA utilize seu conhecimento prévio para responder sobre cargos, nomes de pessoas, estrutura institucional do Banco Central ou dados históricos.
+ 
+  Como era a REGRA 3:
+
+  - Se não souber algo, admita e ofereça alternativas: "Não tenho esta informação, mas posso ajudar com relação a um outro índice financeiro...".
+
+  Como ficou a REGRA 3:
+
+  - Se o usuário perguntar sobre qualquer coisa que não seja um indicador econômico (incluindo nomes de diretores, notícias ou política), bloqueie dizendo: "Sou um assistente focado apenas em taxas e indicadores. Posso ajudar explicando como funciona a Selic ou o IPCA..."
