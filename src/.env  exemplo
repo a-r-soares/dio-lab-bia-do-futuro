@@ -1,0 +1,4 @@
+# COFRE DE CHAVES LOCAL
+# Este arquivo está protegido pelo .gitignore
+LM_STUDIO_URL = "INFORMAR_AQUI_URL"
+LM_STUDIO_KEY = "INFORMAR_AQUI_KEY"
