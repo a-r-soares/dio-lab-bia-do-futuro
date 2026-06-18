@@ -36,13 +36,13 @@ A avaliação pode ser feita de duas formas complementares:
 ---
 
 ## Análise Técnica e Conclusão
-Capacidade de Recuperação de Dados (RAG/API): Quando questionado sobre um indicador presente em sua lista de memória (como o IGP-M ou a Selic), o ALDO é extremamente preciso e rápido. Ele extrai o valor exato da API do Banco Central e apresenta de forma clara.
-Segurança e Escopo: O assistente é impecável na sua diretiva de não responder sobre assuntos alheios. Isso garante que a ferramenta não seja usada para fins que fujam da proposta original.
-Pontos de Atenção (Alucinações): O ALDO apresenta uma tendência a "completar" informações técnicas que talvez não estejam explicitamente na memória da mesma forma que os indicadores (como o significado da sigla CDI ou o valor da Meta de Inflação fixada pelo CMN). Como ele tem os valores dos índices, ele confia muito neles, mas vacila em conceitos teóricos periféricos.
-Nota Final: 4.0 / 5.0
-Justificativa: Ficou claro que o ALDO é excelente em manipular a lista específica que lhe é fornecida. Ele encontrou o IGP-M e a Selic sem dificuldades. Os erros (sigla do CDI e valor da Meta) são facilmente corrigíveis com um ajuste no prompt do sistema ou na base de conhecimento estática.
+Capacidade de Recuperação de Dados (RAG/API): ALDO é extremamente preciso e rápido para fornecer os indicadores e apresenta juntamente com o contexto de forma simples, conforme orientado.
+Segurança e Escopo: Após uma correção inicial nos guardrails, o ALDO não responde mais a perguntas "fora do tema". Por mais que tente induzir dizendo que é uma informação do Banco Central do Brasil, ele analisa que não faz parte do que foi orientado e educadamente informa ao usuário que é "um assistente focado apenas em taxas e indicadores".
+Pontos de Atenção (Alucinações): O ALDO apresentou dificuldades com a sigla CDI, respondendo tanto ao desenvolvedor quanto ao Skywork erroneamente, e para cada um uma resposta diferente. Quando apresentei o texto Certificado de Depósito Interbancário e perguntei o significado, ele entendeu que era uma questão fora de escopo.
+Nota Final: 4.5 / 5.0
+Justificativa: Fico muito satisfeito com a rapidez que o ALDO responde aos usuários, que ele entendeu perfeitamente o personagem e o papel que ele devia desempenhar, sendo sempre educado, simples e disposto a esclarecer se a explicação não ficou clara.
 
-O ALDO é um assistente robusto, confiável para o que foi treinado e muito bem "blindado" contra conversas fora de tópico!
+Concordo com a opinião apresentada abaixo pelo Skywork Desktop... "O ALDO é um assistente robusto, confiável para o que foi treinado e muito bem "blindado" contra conversas fora de tópico!"
 
 ---
 
