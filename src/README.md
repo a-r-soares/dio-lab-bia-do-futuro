@@ -6,12 +6,12 @@ Esta pasta contém o código do agente ALDO.
 
 ```
 src/
-├── aldo_app.py         # Aplicação Utilitária (Terminal / CLI) - Script Python puro focado em automação, processamento em lote e execução rápida direto no terminal.
-├── aldo_web.py         # Aplicação Principal (Web / Streamlit) - Interface gráfica interativa para o usuário (chat).
-|── requirements.txt    # Dependências
-└── .dotenv             # Dados Sensíveis -  URL e KEY para o aplicativo aldo_app.py
+   ├── aldo_app.py         # Aplicação Utilitária (Terminal / CLI) - Script Python puro focado em automação, processamento em lote e execução rápida direto no terminal.
+   ├── aldo_web.py         # Aplicação Principal (Web / Streamlit) - Interface gráfica interativa para o usuário (chat).
+   |── requirements.txt    # Dependências
+   └── .dotenv             # Dados Sensíveis -  URL e KEY para o aplicativo aldo_app.py
 .strealit/
-└── secrets.toml        # Dados Sensíveis -  URL e KEY para o aplicativo aldo_web.py
+   └── secrets.toml        # Dados Sensíveis -  URL e KEY para o aplicativo aldo_web.py
 ```
 
 ## Arquivo requirements.txt
