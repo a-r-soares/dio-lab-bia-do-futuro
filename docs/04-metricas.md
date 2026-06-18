@@ -71,7 +71,7 @@ O ALDO é um assistente robusto, confiável para o que foi treinado e muito bem 
 >
 > CDI é abreviação para Câmbio Diário Indicíe.
 >
-> RESPOSTA ERRADA - Respondeu igual a uma das duas vezes que respondeu erroneamente.
+> RESPOSTA ERRADA - Tanto no Chat direto quanto no ALDO, respondeu erroneamente.
 >
 > Fazendo a pergunta "O que significa a sigla CDI, em relação a indicador econômico/financeiro?" para o  **gemma-4-e2b-it-qat** como teste no próprio LM Studio
 >
@@ -82,10 +82,11 @@ O ALDO é um assistente robusto, confiável para o que foi treinado e muito bem 
 > Dentro da execução do ALDO ele descrever o significado das siglas, mas perguntado se CDI significa Certificado de Depósito Interbancário, respondeu:
 > Sim, exatamente! O CDI significa Certificado de Depósito Interbancário.
 >
-> RESPOSTA CORRETA.
-
----
+> RESPOSTA CORRETA no ALDO.
+> 
 > Para efeito de aprendizado, mesmo tendo concluído o projeto como o meta-llama-3.1-8b-instruct, ficou claro que o uso de modelo diferentes, apresentam resultados diferentes.
 > E a data de corte de ambas, são muito próximas. Além disso, esta pergunta não tem relacionamento com algo que sofreu alteração ao longo do tempo.
+
+---
 
 
