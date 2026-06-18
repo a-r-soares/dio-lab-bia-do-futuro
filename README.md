@@ -28,6 +28,7 @@ Este projeto foi construído com foco em **privacidade e precisão**, utilizando
    └──    equirements.txt             : Lista de dependências do projeto.
  docs/    Documentação de apoio do projeto.
    |──    01-documentacao-agente.md   : Visão geral do comportamento da IA.
+   |──    02-base-conhecimento.md     : Detalhamento da utilização dos dados.
    |──    03-prompts.md               : Estrutura de injeção de contexto e regras.
    |──    04-metricas.md              : Resultados de testes de estresse (QA).
    └──    05-pitch.md                 : Roteiro de apresentação da solução.
