@@ -1,149 +1,56 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 📈 ALDO - Assistente Financeiro Inteligente
 
-## Contexto
+O **ALDO** é um assistente virtual focado em educação financeira, projetado para explicar indicadores econômicos oficiais do Brasil (como Selic, IPCA, CDI, entre outros) de forma didática, acessível e segura.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Este projeto foi construído com foco em **privacidade e precisão**, utilizando uma arquitetura que consome dados reais e orquestra a Inteligência Artificial 100% localmente.
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+## 🚀 Diferenciais da Arquitetura
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+* **Zero Alucinação de Dados:** O modelo não utiliza sua memória pré-treinada para informar taxas. Os dados são extraídos em tempo real da API oficial do Banco Central do Brasil via script em Python.
+* **Inferência Local (Offline):** O processamento de linguagem natural (LLM) ocorre inteiramente na máquina do usuário via LM Studio, garantindo total privacidade e eliminando custos com APIs de terceiros.
+* **Guardrails Rígidos:** O assistente possui instruções estritas para não recomendar investimentos e bloquear perguntas fora do escopo econômico.
+* **Interface Web Reativa:** Front-end construído com Streamlit, oferecendo uma experiência de chat fluida com retenção de histórico.
 
----
+## 🛠️ Tecnologias Utilizadas
 
-## O Que Você Deve Entregar
+* **Python 3:** Motor principal da aplicação.
+* **Streamlit:** Construção da interface gráfica (Web UI).
+* **LM Studio:** Servidor local de inferência de IA.
+* **Modelos Open-Source (GGUF):** Testado e otimizado para rodar com modelos como Llama 3.1 8B Instruct.
+* **Requests (API REST):** Integração com o Banco Central do Brasil (SGS - Sistema Gerenciador de Séries Temporais).
 
-### 1. Documentação do Agente
+## 📁 Estrutura do Repositório
 
-Defina **o que** seu agente faz e **como** ele funciona:
+* **`/src`**: Contém o código-fonte da aplicação[cite: 1].
+  * `aldo_app.py`: Versão de testes para execução via terminal[cite: 1].
+  * `aldo_web.py`: Versão principal com interface gráfica via Streamlit[cite: 1].
+  * `requirements.txt`: Lista de dependências do projeto[cite: 1].
+* **`/docs`**: Documentação de apoio do projeto[cite: 1].
+  * `01-documentacao-agente.md`: Visão geral do comportamento da IA[cite: 1].
+  * `03-prompts.md`: Estrutura de injeção de contexto e regras[cite: 1].
+  * `04-metricas.md`: Resultados de testes de estresse (QA)[cite: 1].
+  * `05-pitch.md`: Roteiro de apresentação da solução[cite: 1].
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+## ⚙️ Como Executar o Projeto
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+**1. Preparando o Servidor de IA (LM Studio)**
+1. Faça o download e instale o [LM Studio](https://lmstudio.ai/).
+2. Baixe um modelo no formato GGUF (recomendação: `Llama-3.1-8B-Instruct-GGUF`).
+3. Inicie o "Local Server" no LM Studio na porta `1234`.
 
----
+**2. Preparando o Ambiente Python**
+Clone este repositório e instale as dependências:
+```bash
+git clone <URL_DO_SEU_REPOSITORIO>
+cd src
+pip install -r requirements.txt
+````
 
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+**3. Iniciando o ALDO**
+Com o servidor do LM Studio rodando em segundo plano, execute a interface web:
+```bash
+streamlit run aldo_web.py
 ```
 
----
+O navegador abrirá automaticamente em http://localhost:8501 com o assistente pronto para uso!
 
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
