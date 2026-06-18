@@ -51,3 +51,10 @@ streamlit run aldo_web.py
 
 <img width="1914" height="1028" alt="image" src="https://github.com/user-attachments/assets/eed581bd-841e-45eb-972c-8a05731f5b49" />
 
+---
+
+## Evidência de Execução do Streamlit e o ALDO
+
+<img width="1916" height="938" alt="image" src="https://github.com/user-attachments/assets/4b301a97-2bc1-4724-a826-fa535c69a190" />
+
+---
