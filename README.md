@@ -21,15 +21,17 @@ Este projeto foi construído com foco em **privacidade e precisão**, utilizando
 
 ## 📁 Estrutura do Repositório
 
-* **`/src`**: Contém o código-fonte da aplicação[cite: 1].
+```
+ /src`**: Contém o código-fonte da aplicação[cite: 1].
   * `aldo_app.py`: Versão de testes para execução via terminal[cite: 1].
   * `aldo_web.py`: Versão principal com interface gráfica via Streamlit[cite: 1].
-  * `requirements.txt`: Lista de dependências do projeto[cite: 1].
-* **`/docs`**: Documentação de apoio do projeto[cite: 1].
+ └── * `requirements.txt`: Lista de dependências do projeto[cite: 1].
+ /docs`**: Documentação de apoio do projeto[cite: 1].
   * `01-documentacao-agente.md`: Visão geral do comportamento da IA[cite: 1].
   * `03-prompts.md`: Estrutura de injeção de contexto e regras[cite: 1].
   * `04-metricas.md`: Resultados de testes de estresse (QA)[cite: 1].
-  * `05-pitch.md`: Roteiro de apresentação da solução[cite: 1].
+  └── 05-pitch.md`: Roteiro de apresentação da solução[cite: 1].
+```
 
 ## ⚙️ Como Executar o Projeto
 
