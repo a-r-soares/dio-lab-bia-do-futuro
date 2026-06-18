@@ -46,3 +46,8 @@ python aldo_app.py
 # Rodar a aplicação principal
 streamlit run aldo_web.py
 ```
+
+## Evidência de Execução do LM Studio e o Servidor
+
+<img width="1914" height="1028" alt="image" src="https://github.com/user-attachments/assets/eed581bd-841e-45eb-972c-8a05731f5b49" />
+
