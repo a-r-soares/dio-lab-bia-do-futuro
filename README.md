@@ -43,6 +43,7 @@ Este projeto foi construído com foco em **privacidade e precisão**, utilizando
 3. Inicie o "Local Server" no LM Studio na porta `1234`.
 
 **2. Preparando o Ambiente Python**
+
 Clone este repositório e instale as dependências:
 ```bash
 git clone <URL_DO_SEU_REPOSITORIO>
@@ -51,6 +52,7 @@ pip install -r requirements.txt
 ````
 
 **3. Iniciando o ALDO**
+
 Com o servidor do LM Studio rodando em segundo plano, execute a interface web:
 ```bash
 streamlit run aldo_web.py
