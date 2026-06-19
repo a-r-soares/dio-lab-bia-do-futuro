@@ -47,4 +47,4 @@ O diferencial do projeto é a construção de uma arquitetura de confiança. O A
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+Projeto ALDO DIO no YouTube (https://youtu.be/rFa0zLgZxN8)
