@@ -172,3 +172,12 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👤 Autor
 
 Desenvolvido por **[a-r-soares](https://github.com/a-r-soares)** como parte de um laboratório da [DIO — Digital Innovation One](https://www.dio.me/).
+
+---
+
+## 🎓 Agradecimentos
+
+Equipe DIO - qualidade das aulas, do material e da orientação sobre o projeto.
+Gemini 3.1 Pro - concepção do projeto
+Skywork Desktop 1.6. 0 - testes das funcionalidades do ALDO.
+Sonet 4.6 - arquivo README.md do projeto - este arquivo.
