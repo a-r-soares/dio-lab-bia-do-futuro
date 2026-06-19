@@ -21,6 +21,7 @@ Além disso, toda a orquestração acontece 100% localmente na máquina, unindo 
 
 <img width="1920" height="1076" alt="image" src="https://github.com/user-attachments/assets/6ff05071-9e8a-4058-a1bb-c3eafa11acc9" />
 
+
 Vejam o ALDO em ação. Quando o usuário pergunta "O que é o IGP-M? Como ele afeta o dia a dia de uma dona de casa?", o sistema vai nos bastidores, cruza a pergunta com os dados frescos da API e entrega uma resposta extremamente didática a respeito do IGP-M e informa a taxa exata do dia de hoje.
 
 Agora, vamos forçar um erro. Se eu pedir uma informação desatualizada ou fora do escopo, como por exemplo "Qual o nome do presidente do Banco Central do Brasil?", vejam a resposta. O guardrail atua imediatamente: o ALDO recusa a pergunta com educação, avisando que é um assistente focado apenas em taxas e indicadores, não sofrendo "sequestro de prompt" e mantendo a integridade da ferramenta.
