@@ -177,6 +177,8 @@ Desenvolvido por **[a-r-soares](https://github.com/a-r-soares)** como parte de u
 
 ## 🎓 Agradecimentos
 
+Accenture - por proporcionar este excelente Bootcamp - Python para Análise e Automação de Dados 
+
 Equipe DIO - qualidade das aulas, do material e da orientação sobre o projeto.
 
 Gemini 3.1 Pro - concepção do projeto
